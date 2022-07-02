@@ -1,0 +1,16 @@
+C:\Users\villi\source\repos\dotnet-MessagingClient\dotnet-MessagingClient\bin\Debug\net5.0\dotnet-MessagingClient.exe
+C:\Users\villi\source\repos\dotnet-MessagingClient\dotnet-MessagingClient\bin\Debug\net5.0\dotnet-MessagingClient.deps.json
+C:\Users\villi\source\repos\dotnet-MessagingClient\dotnet-MessagingClient\bin\Debug\net5.0\dotnet-MessagingClient.runtimeconfig.json
+C:\Users\villi\source\repos\dotnet-MessagingClient\dotnet-MessagingClient\bin\Debug\net5.0\dotnet-MessagingClient.runtimeconfig.dev.json
+C:\Users\villi\source\repos\dotnet-MessagingClient\dotnet-MessagingClient\bin\Debug\net5.0\dotnet-MessagingClient.dll
+C:\Users\villi\source\repos\dotnet-MessagingClient\dotnet-MessagingClient\bin\Debug\net5.0\ref\dotnet-MessagingClient.dll
+C:\Users\villi\source\repos\dotnet-MessagingClient\dotnet-MessagingClient\bin\Debug\net5.0\dotnet-MessagingClient.pdb
+C:\Users\villi\source\repos\dotnet-MessagingClient\dotnet-MessagingClient\obj\Debug\net5.0\dotnet-MessagingClient.csproj.AssemblyReference.cache
+C:\Users\villi\source\repos\dotnet-MessagingClient\dotnet-MessagingClient\obj\Debug\net5.0\dotnet-MessagingClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\villi\source\repos\dotnet-MessagingClient\dotnet-MessagingClient\obj\Debug\net5.0\dotnet-MessagingClient.AssemblyInfoInputs.cache
+C:\Users\villi\source\repos\dotnet-MessagingClient\dotnet-MessagingClient\obj\Debug\net5.0\dotnet-MessagingClient.AssemblyInfo.cs
+C:\Users\villi\source\repos\dotnet-MessagingClient\dotnet-MessagingClient\obj\Debug\net5.0\dotnet-MessagingClient.csproj.CoreCompileInputs.cache
+C:\Users\villi\source\repos\dotnet-MessagingClient\dotnet-MessagingClient\obj\Debug\net5.0\dotnet-MessagingClient.dll
+C:\Users\villi\source\repos\dotnet-MessagingClient\dotnet-MessagingClient\obj\Debug\net5.0\ref\dotnet-MessagingClient.dll
+C:\Users\villi\source\repos\dotnet-MessagingClient\dotnet-MessagingClient\obj\Debug\net5.0\dotnet-MessagingClient.pdb
+C:\Users\villi\source\repos\dotnet-MessagingClient\dotnet-MessagingClient\obj\Debug\net5.0\dotnet-MessagingClient.genruntimeconfig.cache
