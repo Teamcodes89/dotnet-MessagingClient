@@ -28,9 +28,8 @@ namespace dotnet_MessagingClient
 
             connectingThread = new Thread(ConnectingThread.Start);
             connectingThread.Start();
-            connectingThread.Join();
-            MessagingPTP.StartMessaging();
-            
+            Thread.Sleep(1500);
+            MessagingPTP.Startup();
         }
 
     }

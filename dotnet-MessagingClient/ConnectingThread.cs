@@ -12,7 +12,7 @@ namespace dotnet_MessagingClient
     {
         private static string _connectionEndPointUrl = "/api/connections/connect";
         private static bool _isConnected = false;
-
+        public static ClientWebSocket ws = null;
         public static async void Start()
         {
             _connectionEndPointUrl = Program.URL + _connectionEndPointUrl;
@@ -26,28 +26,17 @@ namespace dotnet_MessagingClient
             try
             {
                 CancellationTokenSource source = new CancellationTokenSource();
-                using (var ws = new ClientWebSocket())
+                ws = new ClientWebSocket();   
+                await ws.ConnectAsync(new Uri(_connectionEndPointUrl), CancellationToken.None);
+                byte[] buffer = new byte[256];
+                if(ws.State == WebSocketState.Open)
                 {
-                    await ws.ConnectAsync(new Uri(_connectionEndPointUrl), CancellationToken.None);
-                    byte[] buffer = new byte[256];
-                    while (ws.State == WebSocketState.Open)
-                    {
-                        Console.WriteLine($"Connected to: {url}");
-                        Console.WriteLine($"Your phone number is: {Program.ConnectionRequest.PhoneNumber}");
+                    Console.WriteLine($"Connected to: {url}");
+                    Console.WriteLine($"Your phone number is: {Program.ConnectionRequest.PhoneNumber}");
 
-                        await SendJson(ws);            
-                        _isConnected = true;
-
-                        var result = await ws.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
-                        if (result.MessageType == WebSocketMessageType.Close)
-                        {
-                            await ws.CloseAsync(WebSocketCloseStatus.NormalClosure, string.Empty, CancellationToken.None);
-                        }
-                        else
-                        {
-                            HandleMessage(buffer, result.Count);
-                        }
-                    }
+                    await SendJson(ws);            
+                    _isConnected = true;
+                    ReceiveMessage.Startup();
                 }
             }
             catch(Exception e)
@@ -58,7 +47,7 @@ namespace dotnet_MessagingClient
 
         private static async Task SendJson(WebSocket webSocket)
         {
-            string json = $"\"PhoneNumber\": \"{ Program.ConnectionRequest.PhoneNumber }\"" + "}";
+            string json = "{\"PhoneNumber\": \""+ Program.ConnectionRequest.PhoneNumber + "\"}";
             await webSocket.SendAsync(new ArraySegment<byte>(Encoding.ASCII.GetBytes(json), 0,json.Count()),
                 WebSocketMessageType.Text,
                 false,
