@@ -11,6 +11,7 @@ namespace dotnet_MessagingClient
         public static Objects.External.ConnectionRequest ConnectionRequest = null;
         public static string URL = string.Empty;
         static Thread connectingThread = null;
+        public static bool Connecting = true;
 
         static void Main(string[] args)
         {
@@ -28,7 +29,10 @@ namespace dotnet_MessagingClient
 
             connectingThread = new Thread(ConnectingThread.Start);
             connectingThread.Start();
-            Thread.Sleep(1500);
+            while(Connecting)
+            {
+                Thread.Sleep(100);
+            }
             MessagingPTP.Startup();
         }
 

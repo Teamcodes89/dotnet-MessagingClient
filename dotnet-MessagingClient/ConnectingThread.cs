@@ -32,10 +32,27 @@ namespace dotnet_MessagingClient
                 if(ws.State == WebSocketState.Open)
                 {
                     Console.WriteLine($"Connected to: {url}");
+                    choose_number:
+                    Console.WriteLine("Do you want to use a custom phone number? Y/N");
+                    string use_phone = Console.ReadLine();
+                    if (use_phone.ToUpper() == "Y" || use_phone.ToUpper() == "N")
+                    {
+                        if(use_phone.ToUpper() == "Y")
+                        {
+                            Console.WriteLine("Enter your phone number");
+                            Program.ConnectionRequest.PhoneNumber = Console.ReadLine();
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid character. Try again");
+                        goto choose_number;
+                    }
                     Console.WriteLine($"Your phone number is: {Program.ConnectionRequest.PhoneNumber}");
 
                     await SendJson(ws);            
                     _isConnected = true;
+                    Program.Connecting = false;
                     ReceiveMessage.Startup();
                 }
             }
